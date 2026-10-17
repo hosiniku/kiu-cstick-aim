@@ -22,7 +22,6 @@ This patch (a `code.ips` for Luma3DS / Azahar) gives you **both** at once:
 
 - **Circle Pad** moves Pit, as usual. Dashing works as usual.
 - **C-Stick** aims, using the game's own analog-aim code (the same code as *Reticle Controls → Circle Pad*).
-  That means no screen-edge walls and no "flick" when you let go.
 - **Touch Screen** still works and always wins while you touch it.
 - If you don't touch the C-Stick, the game behaves exactly like the original.
 
