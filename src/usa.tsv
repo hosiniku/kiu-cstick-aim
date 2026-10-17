@@ -1,0 +1,59 @@
+addr	word	label	asm
+0060fde0	eb1a1706		bl move
+00b6d2e0	eb04a1dc		bl aim
+00a41b4c	eb094fc1		bl aim
+00c95a00	e92d4070	move	push {r4, r5, r6, lr}
+00c95a04	e1a04000		mov r4, r0
+00c95a08	e1a05001		mov r5, r1
+00c95a0c	e1a06002		mov r6, r2
+00c95a10	ebe5e8c7		bl 0x0060fd34
+00c95a14	e5d50025		ldrb r0, [r5, #37]
+00c95a18	e3500000		cmp r0, #0
+00c95a1c	0a00000c		beq move_end
+00c95a20	e5d401a9		ldrb r0, [r4, #425]
+00c95a24	e3500003		cmp r0, #3
+00c95a28	0a000009		beq move_end
+00c95a2c	e5950028		ldr r0, [r5, #40]
+00c95a30	e5860000		str r0, [r6]
+00c95a34	ed950a0b		vldr s0, [r5, #44]
+00c95a38	eeb10a40		vneg.f32 s0, s0
+00c95a3c	ed860a01		vstr s0, [r6, #4]
+00c95a40	e5950030		ldr r0, [r5, #48]
+00c95a44	e5860008		str r0, [r6, #8]
+00c95a48	ed950a0d		vldr s0, [r5, #52]
+00c95a4c	eeb10a40		vneg.f32 s0, s0
+00c95a50	ed860a03		vstr s0, [r6, #12]
+00c95a54	e8bd8070	move_end	pop {r4, r5, r6, pc}
+00c95a58	e92d4070	aim	push {r4, r5, r6, lr}
+00c95a5c	e1a04000		mov r4, r0
+00c95a60	e1a05001		mov r5, r1
+00c95a64	ebf646d4		bl 0x00a275bc
+00c95a68	e3a06000		mov r6, #0
+00c95a6c	e5d40000		ldrb r0, [r4]
+00c95a70	e3500002		cmp r0, #2
+00c95a74	0a000015		beq aim_end
+00c95a78	e5940004		ldr r0, [r4, #4]
+00c95a7c	e3100001		tst r0, #1
+00c95a80	1a000011		bne store_hold
+00c95a84	ed940a10		vldr s0, [r4, #64]
+00c95a88	edd40a11		vldr s1, [r4, #68]
+00c95a8c	ee201a00		vmul.f32 s2, s0, s0
+00c95a90	ee601aa0		vmul.f32 s3, s1, s1
+00c95a94	ee311a21		vadd.f32 s2, s2, s3
+00c95a98	eddf1a0e		vldr s3, =L_dead2
+00c95a9c	eeb41ae1		vcmpe.f32 s2, s3
+00c95aa0	eef1fa10		vmrs APSR_nzcv, fpscr
+00c95aa4	c3a06004		movgt r6, #4
+00c95aa8	ca000003		bgt set_analog
+00c95aac	e5d56171		ldrb r6, [r5, #369]
+00c95ab0	e3560000		cmp r6, #0
+00c95ab4	0a000004		beq store_hold
+00c95ab8	e2466001		sub r6, r6, #1
+00c95abc	e3a00002	set_analog	mov r0, #2
+00c95ac0	e5c40000		strb r0, [r4]
+00c95ac4	ed840a12		vstr s0, [r4, #72]
+00c95ac8	edc40a13		vstr s1, [r4, #76]
+00c95acc	e5c56171	store_hold	strb r6, [r5, #369]
+00c95ad0	e1a00004	aim_end	mov r0, r4
+00c95ad4	e8bd8070		pop {r4, r5, r6, pc}
+00c95ad8	3cb851ec	L_dead2	.word 0x3cb851ec

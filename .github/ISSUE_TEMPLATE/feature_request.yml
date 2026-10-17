@@ -1,0 +1,19 @@
+name: Feature request
+description: Ideas and requests — sensitivity, deadzone, gyro aiming, other control schemes …
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: Why / how would you use it?
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Where do you play?
+      multiple: true
+      options: [New 3DS family, Old 3DS family + Circle Pad Pro, Azahar, Other]

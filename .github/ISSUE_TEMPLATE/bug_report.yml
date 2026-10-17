@@ -1,0 +1,37 @@
+name: Bug report
+description: Something doesn't work, or the game crashes or behaves oddly.
+labels: [bug]
+body:
+  - type: dropdown
+    id: region
+    attributes:
+      label: Game region
+      options: [Japan (JPN), North America (USA), Europe (EUR), Not sure]
+    validations: { required: true }
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Where did you play?
+      options: [New 3DS / New 3DS XL / New 2DS XL, Old 3DS / 3DS XL / 2DS + Circle Pad Pro, Azahar, Other emulator]
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes:
+      label: Luma3DS or Azahar version
+      placeholder: e.g. Luma3DS v13.3, Azahar 2124
+  - type: input
+    id: scheme
+    attributes:
+      label: Control scheme (Options → CONTROLS → Control Configuration)
+      placeholder: e.g. Circle Pad (Default) + Touch Screen (Default)
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Land or Air Battle, which chapter/mode, what you did, what you expected.
+    validations: { required: true }
+  - type: textarea
+    id: other
+    attributes:
+      label: Other mods installed for this game
+      description: Translation patches, texture packs, other code.ips …
