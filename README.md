@@ -84,8 +84,10 @@ Delete that `code.ips`.
   The North American patch is built and checked against the USA game code, but nobody has played it yet.
 - **New 3DS / New 2DS XL:** use the built-in C-Stick.
   **Old 3DS / 3DS XL / 2DS:** you need the **Circle Pad Pro** (expansion slide pad), whose right stick acts as the C-Stick.
-- **One `code.ips` per game.** Other mods that also use a `code.ips` for this game can't be used at the same
-  time unless the patches are merged.
+- **One `code.ips` per game.** If you already use another mod that comes with its own `code.ips` for this game,
+  **do not just replace that file with this one** — the other mod may depend on its `code.ips`, and the game can
+  crash (for example, every weapon shows value 100, then the game crashes when you enter the practice range).
+  The two patches have to be merged into one `code.ips`. Please open an issue if you need a merged file.
 - RomFS mods (textures, text) are not affected.
 - Built against the retail game code (JPN `CTR-P-AKDJ`, USA `CTR-P-AKDE`). If the game crashes, please tell us
   which version you have.

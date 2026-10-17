@@ -8,3 +8,4 @@
 - Japanese version: tested on Azahar with this exact `code.ips` (Land Battle, Air Battle, Circle Pad movement and dash, touch priority, inverting, menus, "Try It!").
 - North American version: built and checked against the USA game code, **not yet played**.
 - European version: not yet supported.
+- Note added: replacing another mod's `code.ips` with this one can crash the game — merge them instead.
