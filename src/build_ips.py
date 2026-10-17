@@ -2,6 +2,7 @@
 
     python3 src/build_ips.py jpn code.ips
     python3 src/build_ips.py usa code.ips
+    python3 src/build_ips.py eur code.ips
 
 Each row is one 32-bit ARM word written at a virtual address. code.ips offsets are
 relative to the start of .text (0x00100000), which is what Luma3DS and Azahar expect.
@@ -39,6 +40,6 @@ def main(region, out):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3 or sys.argv[1] not in ('jpn', 'usa'):
+    if len(sys.argv) != 3 or sys.argv[1] not in ('jpn', 'usa', 'eur'):
         sys.exit(__doc__)
     main(sys.argv[1], sys.argv[2])

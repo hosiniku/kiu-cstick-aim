@@ -1,7 +1,12 @@
 # How the patch works
 
-All addresses are for the Japanese version. The USA addresses are in `usa.tsv`. The function bodies are the same,
-only shifted: the input functions by +0x100, the input-packet functions by −0xEC, and one caller by −0x54.
+All addresses are for the Japanese version. The USA and EUR addresses are in `usa.tsv` and `eur.tsv`. The function
+bodies are the same, only shifted:
+
+| | input functions | input-packet functions | one caller |
+|---|---|---|---|
+| USA | +0x100 | −0xEC | −0x54 |
+| EUR | +0x24C | +0x198 | +0x22C |
 
 ## What the game does
 
@@ -30,9 +35,9 @@ With the C-Stick centered, PI is byte-for-byte what the original game produces.
 
 ## Files
 
-- `jpn.tsv`, `usa.tsv` — every word the patch writes: address, word, label, assembly.
+- `jpn.tsv`, `usa.tsv`, `eur.tsv` — every word the patch writes: address, word, label, assembly.
 - `build_ips.py` — turns a table into `code.ips`. It needs no ROM.
 
 The tables are generated from the author's analysis scripts. Those scripts check every premise above against the
 game code (instruction by instruction), disassemble the patch with Capstone, and byte-compare the IPS applied to a
-copy of `code.bin`, for both regions.
+copy of `code.bin`, for all three regions.

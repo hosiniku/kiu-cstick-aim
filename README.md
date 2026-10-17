@@ -4,7 +4,7 @@
 
 **Aim with the C-Stick in *Kid Icarus: Uprising* (3DS) — while you keep moving with the Circle Pad.**
 
-![version](https://img.shields.io/badge/version-v0.1.0-blue)
+![version](https://img.shields.io/badge/version-v0.2.0-blue)
 ![status](https://img.shields.io/badge/status-testing-orange)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
@@ -53,9 +53,9 @@ so a patch for one region does not work on another.
 
 | Region | Title ID | Zip |
 |---|---|---|
-| Japan (新・光神話 パルテナの鏡) | `0004000000030000` | `kiu-cstick-aim-v0.1.0-JPN.zip` |
-| North America | `0004000000030100` | `kiu-cstick-aim-v0.1.0-USA.zip` |
-| Europe | `0004000000030200` | not yet supported |
+| Japan (新・光神話 パルテナの鏡) | `0004000000030000` | `kiu-cstick-aim-v0.2.0-JPN.zip` |
+| North America | `0004000000030100` | `kiu-cstick-aim-v0.2.0-USA.zip` |
+| Europe | `0004000000030200` | `kiu-cstick-aim-v0.2.0-EUR.zip` |
 
 ### 3DS (Luma3DS)
 
@@ -81,7 +81,7 @@ Delete that `code.ips`.
 
 - **Testing so far:** Japanese version on **Azahar** only, played with a Nintendo Switch Pro Controller
   (1st generation) using Azahar's automatic mapping. **Not yet tested on real hardware.**
-  The North American patch is built and checked against the USA game code, but nobody has played it yet.
+  The North American and European patches are built and checked against their own game code, but nobody has played them yet.
 - **New 3DS / New 2DS XL:** use the built-in C-Stick.
   **Old 3DS / 3DS XL / 2DS:** you need the **Circle Pad Pro** (expansion slide pad), whose right stick acts as the C-Stick.
 - **One `code.ips` per game.** If you already use another mod that comes with its own `code.ips` for this game,
@@ -89,7 +89,7 @@ Delete that `code.ips`.
   crash (for example, every weapon shows value 100, then the game crashes when you enter the practice range).
   The two patches have to be merged into one `code.ips`. Please open an issue if you need a merged file.
 - RomFS mods (textures, text) are not affected.
-- Built against the retail game code (JPN `CTR-P-AKDJ`, USA `CTR-P-AKDE`). If the game crashes, please tell us
+- Built against the retail game code (JPN `CTR-P-AKDJ`, USA `CTR-P-AKDE`, EUR `CTR-P-AKDP`). If the game crashes, please tell us
   which version you have.
 
 ## Feedback wanted
