@@ -84,8 +84,8 @@ Delete that `code.ips`.
   The North American patch is built and checked against the USA game code, but nobody has played it yet.
 - **New 3DS / New 2DS XL:** use the built-in C-Stick.
   **Old 3DS / 3DS XL / 2DS:** you need the **Circle Pad Pro** (expansion slide pad), whose right stick acts as the C-Stick.
-- **One `code.ips` per game.** Other mods that also use a `code.ips` for this game (for example, some translation
-  patches) can't be used at the same time unless the patches are merged.
+- **One `code.ips` per game.** Other mods that also use a `code.ips` for this game can't be used at the same
+  time unless the patches are merged.
 - RomFS mods (textures, text) are not affected.
 - Built against the retail game code (JPN `CTR-P-AKDJ`, USA `CTR-P-AKDE`). If the game crashes, please tell us
   which version you have.
